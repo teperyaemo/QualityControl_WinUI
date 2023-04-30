@@ -15,18 +15,25 @@
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
         <Grid x:Name="AppTitleBar"
-              Background="{StaticResource AppCommonBackground}">
-            <Button x:Name="TitleBackBtn"
-                    Background="red"
-                    BorderThickness="0">
-                <FontIcon Glyph="&#xE72B;"/>
-            </Button>
+             Background="{StaticResource AppCommonBackground}"
+              Grid.Row="1">
             <TextBlock x:Name="AppTitleTextBlock" Text="Quality Control Accelerator"
                        TextWrapping="NoWrap"
                        VerticalAlignment="Center"
                        Margin="48,0,0,0"/>
+        </Grid>
+        <Grid x:Name="GoBackGrid">
+            <Button
+                x:Name="GoBackInvokerButton"
+                Click="GoBackInvokerButton_Click">
+                <FontIcon Glyph="&#xE72B;"/>
+            </Button>
         </Grid>
 
         <NavigationView

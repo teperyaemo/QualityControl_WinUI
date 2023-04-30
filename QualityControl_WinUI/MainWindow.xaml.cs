@@ -88,5 +88,12 @@ namespace QualityControl_WinUI
             NavigationViewControl.Header = ((NavigationViewItem)NavigationViewControl.SelectedItem)?.Content?.ToString();
         }
 
+        private void GoBackInvokerButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        {
+            if (this.ContentFrame.CanGoBack)
+            {
+                this.ContentFrame.GoBack();
+            }
+        }
     }
 }
