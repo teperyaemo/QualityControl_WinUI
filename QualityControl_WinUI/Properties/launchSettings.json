@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "QualityControl_WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "QualityControl_WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
