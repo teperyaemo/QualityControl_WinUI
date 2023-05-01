@@ -16,23 +16,35 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="48"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid x:Name="AppTitleBar"
              Background="{StaticResource AppCommonBackground}"
-              Grid.Row="1">
+              Grid.Column="1">
+            <FontIcon Glyph="&#xE7B3;" 
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="10,4,10,0"/>
             <TextBlock x:Name="AppTitleTextBlock" Text="Quality Control Accelerator"
                        TextWrapping="NoWrap"
                        VerticalAlignment="Center"
-                       Margin="48,0,0,0"/>
+                       Margin="50,2,0,0"/>
         </Grid>
+        
         <Grid x:Name="GoBackGrid">
-            <Button
-                x:Name="GoBackInvokerButton"
-                Click="GoBackInvokerButton_Click">
-                <FontIcon Glyph="&#xE72B;"/>
+            <Button x:Name="GoBackInvokerButton"
+                Width="40"
+                Height="40"
+                    Margin="4,4,0,0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Click="GoBackInvokerButton_Click"
+                Background="Transparent"
+                BorderThickness="0"
+                >
+                <FontIcon Glyph="&#xE72B;" FontSize="11"/>
             </Button>
         </Grid>
 
@@ -40,17 +52,23 @@
             IsBackButtonVisible="Collapsed"
             x:Name="NavigationViewControl"
             Grid.Row="1"
+            Grid.ColumnSpan="2"
             IsTitleBarAutoPaddingEnabled="False"
-            IsSettingsVisible="True"
+            IsSettingsVisible="False"
             AlwaysShowHeader="False"
             IsTabStop="False" 
             BackRequested="NavigationViewControl_BackRequested" 
-            ItemInvoked="NavigationViewControl_ItemInvoked"
-            
-            >            
+            ItemInvoked="NavigationViewControl_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Home" Content="Home" Tag="QualityControl_WinUI.Views.HomePage" />
-                <NavigationViewItem Icon="People" Content="Config" SelectsOnInvoked="False"/>
+                <NavigationViewItem Icon="Home" 
+                                    Content="Home" 
+                                    Tag="QualityControl_WinUI.Views.HomePage" />
+                <NavigationViewItem Icon="People" 
+                                    Content="Config" 
+                                    Tag="QualityControl_WinUI.Views.AccountPage"/>
+                <NavigationViewItem Icon="Phone" 
+                                    Content="Config" 
+                                    Tag="QualityControl_WinUI.Views.SurveyPage"/>
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame" Navigated="ContentFrame_Navigated"/>
         </NavigationView>
