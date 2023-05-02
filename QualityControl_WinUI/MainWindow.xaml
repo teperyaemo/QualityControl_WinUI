@@ -61,13 +61,13 @@
             ItemInvoked="NavigationViewControl_ItemInvoked">
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="Home" 
-                                    Content="Home" 
+                                    Content="Домашняя страница" 
                                     Tag="QualityControl_WinUI.Views.HomePage" />
                 <NavigationViewItem Icon="People" 
-                                    Content="Config" 
+                                    Content="Залупа" 
                                     Tag="QualityControl_WinUI.Views.AccountPage"/>
                 <NavigationViewItem Icon="Phone" 
-                                    Content="Config" 
+                                    Content="Задачи подразделения отзывово" 
                                     Tag="QualityControl_WinUI.Views.SurveyPage"/>
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame" Navigated="ContentFrame_Navigated"/>

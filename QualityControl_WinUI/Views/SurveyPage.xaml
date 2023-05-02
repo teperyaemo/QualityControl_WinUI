@@ -7,11 +7,68 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:QualityControl_WinUI.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local1="using:ABI.Windows.ApplicationModel.Contacts"
     mc:Ignorable="d"
-    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+    Background="#282828">
 
-    <Grid>
+    <Grid x:Name="SurveyGrid"
+          Padding="40,40,40, 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Задачи подразделения отзывов" Style="{StaticResource TitleTextBlockStyle}" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
         
+        <Grid x:Name="gr"
+              BorderThickness="1"
+              CornerRadius="8,8,0,0"
+              Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" MaxWidth="320" />
+            </Grid.ColumnDefinitions>
+
+            <ContentPresenter  x:Name="GridPresenter"
+                Grid.RowSpan="2"
+                Padding="16"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background ="#202020">
+
+            </ContentPresenter>
+
+            <ContentPresenter x:Name="OptionsPresenter"
+                Grid.Column="1"
+                Grid.RowSpan="2"
+                Padding="16"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="#2b2b2b"
+                BorderBrush="#323232"
+                BorderThickness="0,0,1,0">
+                <StackPanel Width="200">
+                    <StackPanel VerticalAlignment="Top" Orientation="Horizontal">
+                        <Button x:Name="PickFilesButton" 
+                                Content="Open multiple files"
+                                Click="PickFilesButton_Click" 
+                                Margin="0,0,0,10"/>
+                        <TextBlock x:Name="PickFilesOutputTextBlock" TextWrapping="Wrap" Padding="20,5,0,0"/>
+                    </StackPanel>
+
+                    <Slider x:Name="CountSlider" 
+                            Header="Count of pages" 
+                            Maximum="100" 
+                            Minimum="1"
+                            TickFrequency="20"
+                            TickPlacement="Outside"
+                            SnapsTo="StepValues" />
+                </StackPanel>
+            </ContentPresenter>
+        </Grid>
     </Grid>
 </Page>
