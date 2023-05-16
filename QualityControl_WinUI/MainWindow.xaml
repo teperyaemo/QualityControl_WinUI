@@ -60,15 +60,19 @@
             BackRequested="NavigationViewControl_BackRequested" 
             ItemInvoked="NavigationViewControl_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Home" 
-                                    Content="Домашняя страница" 
+                <NavigationViewItem Icon="Home"
+                                    Content="Home page" 
                                     Tag="QualityControl_WinUI.Views.HomePage" />
-                <NavigationViewItem Icon="People" 
-                                    Content="Залупа" 
-                                    Tag="QualityControl_WinUI.Views.AccountPage"/>
+                <NavigationViewItem Icon="Map"
+                                    Content="Review"
+                                    Tag="QualityControl_WinUI.Views.ReviewPage" />
                 <NavigationViewItem Icon="Phone" 
-                                    Content="Задачи подразделения отзывово" 
+                                    Content="Feedback" 
+                                    Tag="QualityControl_WinUI.Views.SurveyPage"                                    />
+                <NavigationViewItem Icon="Library" 
+                                    Content="Documentation"
                                     Tag="QualityControl_WinUI.Views.SurveyPage"/>
+                
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame" Navigated="ContentFrame_Navigated"/>
         </NavigationView>

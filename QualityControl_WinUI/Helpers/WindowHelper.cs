@@ -40,10 +40,8 @@ namespace QualityControl_WinUI.Helpers
             {
                 foreach (Window window in _activeWindows)
                 {
-                    if (element.XamlRoot == window.Content.XamlRoot)
-                    {
-                        return window;
-                    }
+                    //тут было кое что
+                     return window;
                 }
             }
             return null;

@@ -34,6 +34,19 @@ namespace QualityControl_WinUI
     /// </summary>
     public partial class App : Application
     {
+        private static Window startupWindow;
+
+        // Get the initial window created for this app
+        // On UWP, this is simply Window.Current
+        // On Desktop, multiple Windows may be created, and the StartupWindow may have already
+        // been closed.
+        public static Window StartupWindow
+        {
+            get
+            {
+                return startupWindow;
+            }
+        }
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -50,6 +63,9 @@ namespace QualityControl_WinUI
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             m_window = new MainWindow();
+
+            startupWindow = WindowHelper.CreateWindow();
+            startupWindow.ExtendsContentIntoTitleBar = true;
 
             if (AppWindowTitleBar.IsCustomizationSupported()) //Run only on Windows 11
             {

@@ -11,38 +11,44 @@
     mc:Ignorable="d"
     Background="#282828">
 
-    <Grid x:Name="SurveyGrid"
+    <ScrollViewer>
+        <Grid x:Name="SurveyGrid"
           Padding="40,40,40, 0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-
-        <TextBlock Text="Задачи подразделения отзывов" Style="{StaticResource TitleTextBlockStyle}" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
-        
-        <Grid x:Name="gr"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel >
+                <TextBlock Text="Feedback task's" Style="{StaticResource TitleTextBlockStyle}"/>
+                <TextBlock x:Name="CountOfRemovedLinksTB" HorizontalAlignment="Left" Style="{StaticResource BodyTextBlockStyle}" Grid.ColumnSpan="2" Margin="0,0,0,0"/>
+            
+            <Grid x:Name="PageCardGrid"
               BorderThickness="1"
               CornerRadius="8,8,0,0"
               Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0"/>
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" MaxWidth="320" />
-            </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" MaxWidth="320" />
+                </Grid.ColumnDefinitions>
 
-            <ContentPresenter  x:Name="GridPresenter"
+                <ContentPresenter  x:Name="GridPresenter"
                 Grid.RowSpan="2"
                 Padding="16"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background ="#202020">
 
-            </ContentPresenter>
 
-            <ContentPresenter x:Name="OptionsPresenter"
+                    <ListView x:Name="DataListView"
+                    Height="400"
+                    HorizontalAlignment="Stretch"/>
+                </ContentPresenter>
+
+                <ContentPresenter x:Name="OptionsPresenter"
                 Grid.Column="1"
                 Grid.RowSpan="2"
                 Padding="16"
@@ -51,24 +57,59 @@
                 Background="#2b2b2b"
                 BorderBrush="#323232"
                 BorderThickness="0,0,1,0">
-                <StackPanel Width="200">
-                    <StackPanel VerticalAlignment="Top" Orientation="Horizontal">
+                    <StackPanel Width="200">
+                        <Button x:Name="OpenUrlBtn" 
+                            Content="Open URL"
+                            Click="OpenUrlBtn_Click"
+                            Margin="0,0,0,10"
+                            HorizontalAlignment="Stretch"/>
+                        
                         <Button x:Name="PickFilesButton" 
-                                Content="Open multiple files"
-                                Click="PickFilesButton_Click" 
-                                Margin="0,0,0,10"/>
-                        <TextBlock x:Name="PickFilesOutputTextBlock" TextWrapping="Wrap" Padding="20,5,0,0"/>
-                    </StackPanel>
+                            Content="Open multiple files"
+                            Click="PickFilesButton_Click" 
+                            Margin="0,0,0,10"
+                            HorizontalAlignment="Stretch"/>
 
-                    <Slider x:Name="CountSlider" 
+                        <TextBlock x:Name="PickFilesOutputTextBlock" 
+                            TextWrapping="Wrap" 
+                            Margin="0,0,0,15" 
+                            HorizontalAlignment="Stretch" 
+                            Text="Files not found"/>
+
+                        <Slider x:Name="CountSlider" 
+                            Value="30"
                             Header="Count of pages" 
-                            Maximum="100" 
-                            Minimum="1"
-                            TickFrequency="20"
+                            Maximum="60" 
+                            Minimum="0"
+                            TickFrequency="10"
                             TickPlacement="Outside"
-                            SnapsTo="StepValues" />
-                </StackPanel>
-            </ContentPresenter>
+                            SnapsTo="StepValues"/>
+
+                        <Button x:Name="OpenLinkBtn"
+                            Content="Open links"
+                            Margin="0,15,0,10"
+                            Click="OpenLinkBtn_Click"
+                            HorizontalAlignment="Stretch"/>
+
+                        <CalendarDatePicker x:Name="CalendarDP"
+                            PlaceholderText="Pick a date" 
+                            HorizontalAlignment="Stretch" 
+                            Header="Calendar" 
+                            />
+
+                        </StackPanel>
+                </ContentPresenter>
+            </Grid>
+            <Expander
+                 IsExpanded="False"
+                 ExpandDirection="Down"
+                 VerticalAlignment="Top"
+                 Header="Rules"
+                 Content="This is in the content"
+                 HorizontalContentAlignment="Left"
+                 CornerRadius="0,0,8,8"
+                 HorizontalAlignment="Stretch"/>
+            </StackPanel>
         </Grid>
-    </Grid>
+    </ScrollViewer>
 </Page>

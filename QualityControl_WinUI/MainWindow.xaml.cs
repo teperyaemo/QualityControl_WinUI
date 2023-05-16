@@ -8,6 +8,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using QualityControl_WinUI.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +17,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
@@ -85,7 +87,6 @@ namespace QualityControl_WinUI
                     .OfType<NavigationViewItem>()
                     .First(n => n.Tag.Equals(ContentFrame.SourcePageType.FullName.ToString()));
             }
-
             NavigationViewControl.Header = ((NavigationViewItem)NavigationViewControl.SelectedItem)?.Content?.ToString();
         }
 

@@ -30,5 +30,6 @@ namespace QualityControl_WinUI.Views
         {
             this.InitializeComponent();
         }
+
     }
 }

@@ -10,11 +10,12 @@
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <DefaultLanguage>ru-RU</DefaultLanguage>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Assets\BadgeLogo.scale-400.png" />
-    <None Remove="Views\AccountPage.xaml" />
     <None Remove="Views\HomePage.xaml" />
+    <None Remove="Views\ReviewPage.xaml" />
     <None Remove="Views\SettingsPage.xaml" />
     <None Remove="Views\SurveyPage.xaml" />
   </ItemGroup>
@@ -47,11 +48,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\AccountPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <Page Update="Views\SettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -63,6 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\ReviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!-- 
