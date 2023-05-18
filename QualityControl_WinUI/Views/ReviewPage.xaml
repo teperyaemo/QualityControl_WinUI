@@ -9,45 +9,46 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-
-    <Grid x:Name="ReviewGrid"
+    Background="{ThemeResource SolidBackgroundFillColorTertiaryBrush}">
+ 
+    <ScrollViewer>
+        <Grid x:Name="ReviewGrid"
           Padding="40,40,40, 0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <StackPanel >
-            <TextBlock Text="Review page" Style="{StaticResource TitleTextBlockStyle}"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel >
+                <TextBlock Text="Review page" Style="{StaticResource TitleTextBlockStyle}"/>
 
-            <Grid x:Name="PageCardGrid"
-              BorderThickness="1"
-              CornerRadius="8,8,0,0"
-              Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="Auto" MaxWidth="300" />
-                </Grid.ColumnDefinitions>
+                <Grid x:Name="PageCardGrid"
+                CornerRadius="8,8,0,0"
+                Grid.Row="1"
+                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                BorderThickness="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" MaxWidth="300" />
+                    </Grid.ColumnDefinitions>
 
-                <ContentPresenter  x:Name="MainPresenter"
-                MinHeight="300"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Background ="#202020">
-                    <Grid x:Name="MainPreseterGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="3*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="2*"/>
-                        </Grid.RowDefinitions>
+                    <ContentPresenter  x:Name="MainPresenter"
+                        MinHeight="300"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Background ="{ThemeResource SolidBackgroundFillColorBaseBrush}">
+                        <Grid x:Name="MainPreseterGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
 
-                        <Button Grid.Row="0"
+                            <Button Grid.Row="0"
                                 Grid.RowSpan="2"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
@@ -59,7 +60,8 @@
                                 FontSize="24"
                                 Margin="0,0,1,1"
                                 CornerRadius="8,0,0,0"/>
-                        <Button Grid.Row="0" 
+                            
+                            <Button Grid.Row="0" 
                                 Grid.Column="2" 
                                 VerticalAlignment="Stretch" 
                                 HorizontalAlignment="Stretch"
@@ -69,7 +71,8 @@
                                 FontSize="24"
                                 Margin="1,0,2,1"
                                 CornerRadius="0"/>
-                        <Button Grid.Row="2" 
+                            
+                            <Button Grid.Row="2" 
                                 Grid.Column="0"  
                                 VerticalAlignment="Stretch" 
                                 HorizontalAlignment="Stretch"
@@ -79,7 +82,8 @@
                                 FontSize="24"
                                 Margin="0,1,1,0"
                                 CornerRadius="0"/>
-                        <Button Grid.Row="2" 
+                            
+                            <Button Grid.Row="2" 
                                 Grid.Column="1" 
                                 VerticalAlignment="Stretch"
                                 HorizontalAlignment="Stretch"
@@ -89,7 +93,8 @@
                                 FontSize="24"
                                 Margin="1,1,1,0"
                                 CornerRadius="0"/>
-                        <Button Grid.Row="1" 
+                            
+                            <Button Grid.Row="1" 
                                 Grid.RowSpan="2" 
                                 Grid.Column="2" 
                                 VerticalAlignment="Stretch" 
@@ -100,33 +105,49 @@
                                 FontSize="24"
                                 Margin="1,1,2,0"
                                 CornerRadius="0"/>
-                    </Grid>
-                </ContentPresenter>
+                        </Grid>
+                    </ContentPresenter>
 
-                <ContentPresenter x:Name="OptionsPresenter"
-                Grid.Column="1"
-                Padding="16"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Background="#2b2b2b"
-                BorderBrush="#323232"
-                BorderThickness="0,0,1,0">
-                    <ListBox x:Name="DataListBox"
-                    MinWidth="250"
-                    HorizontalAlignment="Stretch" >
-                        
-                    </ListBox>
-                </ContentPresenter>
-            </Grid>
-            <Expander
-                 IsExpanded="False"
-                 ExpandDirection="Down"
-                 VerticalAlignment="Top"
-                 Header="Rules"
-                 Content="This is in the content"
-                 HorizontalContentAlignment="Left"
-                 CornerRadius="0,0,8,8"
-                 HorizontalAlignment="Stretch"/>
-        </StackPanel>
-    </Grid>
+                    <ContentPresenter x:Name="OptionsPresenter"
+                    Grid.Column="1"
+                    Padding="16"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Background="{ThemeResource LayerOnMicaBaseAltFillColorTertiaryBrush}"
+                    BorderBrush="{ThemeResource CardBackgroundFillColorDefault}"
+                    BorderThickness="1,0,0,0">
+                            <StackPanel>
+                                <Button Content="Randomize"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="0,0,0,16"/>
+                                <ListView x:Name="DataListView"
+                                MinWidth="250"
+                                MaxWidth="250"
+                               MaxHeight="400"
+                                HorizontalAlignment="Stretch" 
+                                ItemClick="DataListView_ItemClick"
+                                SelectionMode="None"
+                                IsItemClickEnabled="True">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Padding="5">
+                                                <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackPanel>
+                        </ContentPresenter>
+                    </Grid>
+                <Expander x:Name="ReviewExpander"
+                     IsExpanded="False"
+                     ExpandDirection="Down"
+                     VerticalAlignment="Top"
+                     Header="Rules"
+                     HorizontalContentAlignment="Left"
+                     CornerRadius="0,0,8,8"
+                     HorizontalAlignment="Stretch"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Page>

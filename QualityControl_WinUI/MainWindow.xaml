@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid x:Name="AppTitleBar"
-             Background="{StaticResource AppCommonBackground}"
+             Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
               Grid.Column="1">
             <FontIcon Glyph="&#xE7B3;" 
                       HorizontalAlignment="Left"
@@ -42,8 +42,7 @@
                 HorizontalAlignment="Center"
                 Click="GoBackInvokerButton_Click"
                 Background="Transparent"
-                BorderThickness="0"
-                >
+                BorderThickness="0"                >
                 <FontIcon Glyph="&#xE72B;" FontSize="11"/>
             </Button>
         </Grid>
@@ -54,11 +53,12 @@
             Grid.Row="1"
             Grid.ColumnSpan="2"
             IsTitleBarAutoPaddingEnabled="False"
-            IsSettingsVisible="False"
+            IsSettingsVisible="True"
             AlwaysShowHeader="False"
             IsTabStop="False" 
             BackRequested="NavigationViewControl_BackRequested" 
-            ItemInvoked="NavigationViewControl_ItemInvoked">
+            ItemInvoked="NavigationViewControl_ItemInvoked"
+            PaneDisplayMode="Auto">
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="Home"
                                     Content="Home page" 
