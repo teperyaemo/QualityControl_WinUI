@@ -58,7 +58,8 @@
             IsTabStop="False" 
             BackRequested="NavigationViewControl_BackRequested" 
             ItemInvoked="NavigationViewControl_ItemInvoked"
-            PaneDisplayMode="Auto">
+            PaneDisplayMode="Auto"
+            IsPaneOpen="False">
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="Home"
                                     Content="Home page" 
