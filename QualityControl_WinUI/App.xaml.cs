@@ -24,6 +24,7 @@ using WinRT; // required to support Window.As<ICompositionSupportsSystemBackdrop
 using QualityControl_WinUI.Helpers;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Windows.Storage;
+using System.Reflection;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -89,6 +90,9 @@ namespace QualityControl_WinUI
             Windows.Graphics.RectInt32[] rects = new Windows.Graphics.RectInt32[] { new Windows.Graphics.RectInt32(48, 0, (int)args.Size.Width - 48, 48) };
             
         }
+
+
+
 
         private Window m_window;
     }

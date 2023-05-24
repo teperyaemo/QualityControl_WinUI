@@ -117,7 +117,9 @@
                     BorderBrush="{ThemeResource CardBackgroundFillColorDefault}"
                     BorderThickness="1,0,0,0">
                             <StackPanel>
-                                <Button Content="Randomize"
+                                <Button x:Name="RandomBtn" 
+                                    Content="Randomize"
+                                    Click="RandomBtn_Click"
                                     HorizontalAlignment="Stretch"
                                     Margin="0,0,0,16"/>
                                 <ListView x:Name="DataListView"

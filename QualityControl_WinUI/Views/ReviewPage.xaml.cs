@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -61,7 +62,17 @@ namespace QualityControl_WinUI.Views
 
         private void DataListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-           
+            var package = new DataPackage();
+            package.SetText(e.ClickedItem as String);
+            Clipboard.SetContent(package);
+        }
+
+        private void RandomBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Random rnd = new Random();            
+            var package = new DataPackage();
+            package.SetText(answers[rnd.Next(0, answers.Length - 1)]);
+            Clipboard.SetContent(package);
         }
     }
 }
