@@ -25,6 +25,8 @@ using QualityControl_WinUI.Helpers;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Windows.Storage;
 using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
+using CommunityToolkit.Mvvm.DependencyInjection;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -56,14 +58,7 @@ namespace QualityControl_WinUI
         public App()
         {
             this.InitializeComponent();
-            // Get theme choice from LocalSettings.
-            object value = ApplicationData.Current.LocalSettings.Values["themeSetting"];
-
-            if (value != null)
-            {
-                // Apply theme choice.
-                App.Current.RequestedTheme = (ApplicationTheme)(int)value;
-            }
+            Ioc.Default.ConfigureServices(ConfigureServices());
         }
 
         /// <summary>
@@ -72,16 +67,16 @@ namespace QualityControl_WinUI
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            m_window = new MainWindow();
+            Window = new MainWindow();
 
             startupWindow = WindowHelper.CreateWindow();
             startupWindow.ExtendsContentIntoTitleBar = true;
 
             if (AppWindowTitleBar.IsCustomizationSupported()) //Run only on Windows 11
             {
-                m_window.SizeChanged += SizeChanged; //Register handler for setting draggable rects
+                Window.SizeChanged += SizeChanged; //Register handler for setting draggable rects
             }
-            m_window.Activate();
+            Window.Activate();
         }
 
         private void SizeChanged(object sender, WindowSizeChangedEventArgs args)
@@ -91,9 +86,15 @@ namespace QualityControl_WinUI
             
         }
 
+        private static IServiceProvider ConfigureServices()
+        {
+            var services = new ServiceCollection();
+            services.AddSingleton<IThemeSelectorService, ThemeSelectiorService>();
+            services.AddSingleton<SettingsViewModel>();
+            return services.BuildServiceProvider();
+        }
 
-
-
-        private Window m_window;
+        public static Window? Window { get; private set; }
+        //private Window m_window;
     }
 }

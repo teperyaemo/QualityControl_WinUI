@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -29,14 +30,32 @@ namespace QualityControl_WinUI.Views
     /// </summary>
     public sealed partial class SettingsPage : Page
     {
+        public SettingsViewModel ViewModel { get; }
+
         public SettingsPage()
         {
             this.InitializeComponent();
+
+            ViewModel = Ioc.Default.GetRequiredService<SettingsViewModel>();
         }
 
         private void themeMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
+            switch (themeMode.SelectedIndex)
+            {
+                case 0:
+                    ViewModel.UpdateTheme("Light");
+                    break;
+
+                case 1:
+                    ViewModel.UpdateTheme("Dark");
+                    break;
+
+                case 2:
+                    ViewModel.UpdateTheme("Default");
+                    break;      
+            }
+
         }
     }
 }

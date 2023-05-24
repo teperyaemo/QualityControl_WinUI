@@ -45,7 +45,11 @@
                                         <TextBlock Text="Select which app thme to display" Style="{StaticResource CaptionTextBlockStyle}"/>
                                     </StackPanel>
                                 </StackPanel>
-                                <ComboBox x:Name="themeMode" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,16,0" SelectedIndex="1">
+                                <ComboBox x:Name="themeMode" 
+                                          SelectionChanged="themeMode_SelectionChanged"
+                                          HorizontalAlignment="Right" 
+                                          VerticalAlignment="Center" 
+                                          Margin="0,0,16,0">
                                     <ComboBoxItem Content="Light" Tag="Light" />
                                     <ComboBoxItem Content="Dark" Tag="Dark" />
                                     <ComboBoxItem Content="Use system setting" Tag="Default" />

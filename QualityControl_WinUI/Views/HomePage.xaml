@@ -12,11 +12,7 @@
     Background="{ThemeResource SolidBackgroundFillColorTertiaryBrush}">
 
     <Grid x:Name="SurveyGrid"
-          Padding="40,40,40, 0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+          Padding="40,40,40, 40">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -38,34 +34,34 @@
                        Grid.ColumnSpan="2" Margin="0,0,0,0"/>            
         </StackPanel>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+        <StackPanel VerticalAlignment="Center">
             <Grid>
                 <ProgressRing IsActive="False" 
                               Height="105" Width="105" 
-                              Foreground="#ffffff" FontSize="2"/>
+                              Foreground="{ThemeResource FocusStrokeColorOuterBrush}" FontSize="2"/>
                 <PersonPicture ProfilePicture="C:\Users\11\source\repos\QualityControl_WinUI\QualityControl_WinUI\Assets\polinapic.png"/>
             </Grid>
             <TextBlock x:Name="qwe" Text="Polina" 
                       Margin="0,10,0,0" HorizontalAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" 
-                    Grid.Row="1" Grid.Column="1"
+                    Grid.Column="1"
                     VerticalAlignment="Center">
             <Grid>
-                <ProgressRing IsActive="False" 
+                <ProgressRing IsActive="true" 
                               Height="105" Width="105" 
-                              Foreground="#ffffff" FontSize="2"/>
+                              Foreground="{ThemeResource FocusStrokeColorOuterBrush}" FontSize="2"/>
                 <PersonPicture ProfilePicture="C:\Users\11\source\repos\QualityControl_WinUI\QualityControl_WinUI\Assets\profilepic.png"/>
             </Grid>
             <TextBlock Text="Minislam" 
                        Margin="0,10,0,0" HorizontalAlignment="Center"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center">
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
             <Grid>
                 <ProgressRing IsActive="False" 
                               Height="105" Width="105" 
-                              Foreground="#ffffff" FontSize="2"/>
+                              Foreground="{ThemeResource FocusStrokeColorOuterBrush}" FontSize="2"/>
                 <PersonPicture ProfilePicture="C:\Users\11\source\repos\QualityControl_WinUI\QualityControl_WinUI\Assets\dianapic.png"/>
             </Grid>
             <TextBlock Text="Diana" Margin="0,10,0,0" HorizontalAlignment="Center"/>

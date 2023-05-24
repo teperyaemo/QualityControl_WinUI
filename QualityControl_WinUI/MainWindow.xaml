@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid x:Name="AppTitleBar"
-             Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+             Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
               Grid.Column="1">
             <FontIcon Glyph="&#xE7B3;" 
                       HorizontalAlignment="Left"

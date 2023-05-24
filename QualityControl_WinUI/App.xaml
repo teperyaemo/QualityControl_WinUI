@@ -13,8 +13,8 @@
                 <!-- Other merged dictionaries here -->                
             </ResourceDictionary.MergedDictionaries>
             <Color x:Key="AppCommonBackground">Transparent</Color>
-            <SolidColorBrush x:Key="WindowCaptionBackground" Color="{StaticResource AppCommonBackground}"/>
-            <SolidColorBrush x:Key="WindowCaptionBackgroundDisabled" Color="{StaticResource AppCommonBackground}"/>
+            <SolidColorBrush x:Key="WindowCaptionBackground" Color="{ThemeResource AppCommonBackground}"/>
+            <SolidColorBrush x:Key="WindowCaptionBackgroundDisabled" Color="{ThemeResource AppCommonBackground}"/>
             <!-- Other app resources here -->
         </ResourceDictionary>
     </Application.Resources>
