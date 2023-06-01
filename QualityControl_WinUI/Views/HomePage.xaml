@@ -35,36 +35,57 @@
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center">
-            <Grid>
-                <ProgressRing IsActive="False" 
-                              Height="105" Width="105" 
-                              Foreground="{ThemeResource FocusStrokeColorOuterBrush}" FontSize="2"/>
-                <PersonPicture ProfilePicture="C:\Users\11\source\repos\QualityControl_WinUI\QualityControl_WinUI\Assets\polinapic.png"/>
-            </Grid>
-            <TextBlock x:Name="qwe" Text="Polina" 
-                      Margin="0,10,0,0" HorizontalAlignment="Center"/>
+            <Button x:Name="PolinaBtn"
+                    Click="PolinaBtn_Click"
+                    Style="{StaticResource TransparentBtn}">
+                <Grid>
+                    <ProgressRing x:Name="PolinaPR" 
+                        IsActive="False" 
+                        Height="105" Width="105" 
+                        Foreground="{ThemeResource FocusStrokeColorOuterBrush}" FontSize="2"/>
+                    <PersonPicture ProfilePicture="C:\Users\11\source\repos\QualityControl_WinUI\QualityControl_WinUI\Assets\polinapic.png"/>
+                </Grid>                
+            </Button>
+            <TextBlock Text="Polina" 
+                       Margin="0,10,0,0" 
+                       HorizontalAlignment="Center"/>
         </StackPanel>
+        
         <StackPanel Orientation="Vertical" 
-                    Grid.Column="1"
+                    Grid.Column="1"                    
                     VerticalAlignment="Center">
-            <Grid>
-                <ProgressRing IsActive="true" 
-                              Height="105" Width="105" 
-                              Foreground="{ThemeResource FocusStrokeColorOuterBrush}" FontSize="2"/>
-                <PersonPicture ProfilePicture="C:\Users\11\source\repos\QualityControl_WinUI\QualityControl_WinUI\Assets\profilepic.png"/>
-            </Grid>
+            <Button Name="MinislamBtn" 
+                    Click="MinislamBtn_Click"
+                    Style="{StaticResource TransparentBtn}">
+                <Grid>
+                    <ProgressRing x:Name="MinislamPR"
+                        IsActive="False" 
+                        Height="105" Width="105" 
+                        Foreground="{ThemeResource FocusStrokeColorOuterBrush}" FontSize="2"/>
+                    <PersonPicture ProfilePicture="C:\Users\11\source\repos\QualityControl_WinUI\QualityControl_WinUI\Assets\profilepic.png"/>
+                </Grid>                
+            </Button>
             <TextBlock Text="Minislam" 
-                       Margin="0,10,0,0" HorizontalAlignment="Center"/>
+                       Margin="0,10,0,0" 
+                       HorizontalAlignment="Center"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" VerticalAlignment="Center">
-            <Grid>
-                <ProgressRing IsActive="False" 
-                              Height="105" Width="105" 
-                              Foreground="{ThemeResource FocusStrokeColorOuterBrush}" FontSize="2"/>
-                <PersonPicture ProfilePicture="C:\Users\11\source\repos\QualityControl_WinUI\QualityControl_WinUI\Assets\dianapic.png"/>
-            </Grid>
-            <TextBlock Text="Diana" Margin="0,10,0,0" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Column="2" 
+                    VerticalAlignment="Center">
+            <Button x:Name="DianaBtn"
+                    Click="DianaBtn_Click"
+                    Style="{StaticResource TransparentBtn}">
+                <Grid>
+                    <ProgressRing x:Name="DianaPR"
+                        IsActive="False" 
+                        Height="105" Width="105" 
+                        Foreground="{ThemeResource FocusStrokeColorOuterBrush}" FontSize="2"/>
+                    <PersonPicture ProfilePicture="C:\Users\11\source\repos\QualityControl_WinUI\QualityControl_WinUI\Assets\dianapic.png"/>
+                </Grid>
+            </Button>
+            <TextBlock Text="Diana" 
+                       Margin="0,10,0,0" 
+                       HorizontalAlignment="Center"/>
         </StackPanel>
 
     </Grid>

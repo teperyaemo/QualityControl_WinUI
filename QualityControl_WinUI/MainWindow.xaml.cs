@@ -29,6 +29,7 @@ namespace QualityControl_WinUI
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        public static int UserID; // 1 - polina | 2 - minislam | 3 - diana
         public MainWindow()
         {
             this.InitializeComponent();

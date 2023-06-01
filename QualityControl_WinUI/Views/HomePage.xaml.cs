@@ -31,5 +31,25 @@ namespace QualityControl_WinUI.Views
             this.InitializeComponent();
         }
 
+        private void MinislamBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MinislamPR.IsActive = true;
+            PolinaPR.IsActive = false;
+            DianaPR.IsActive = false;
+        }
+
+        private void PolinaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MinislamPR.IsActive = false;
+            PolinaPR.IsActive = true;
+            DianaPR.IsActive = false;
+        }
+
+        private void DianaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MinislamPR.IsActive = false;
+            PolinaPR.IsActive = false;
+            DianaPR.IsActive = true;
+        }
     }
 }
