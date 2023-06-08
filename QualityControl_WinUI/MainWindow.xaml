@@ -61,18 +61,22 @@
             PaneDisplayMode="Auto"
             IsPaneOpen="False">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Home"
-                                    Content="Home page" 
-                                    Tag="QualityControl_WinUI.Views.HomePage" />
-                <NavigationViewItem Icon="Map"
-                                    Content="Review"
-                                    Tag="QualityControl_WinUI.Views.ReviewPage" />
-                <NavigationViewItem Icon="Phone" 
-                                    Content="Feedback" 
-                                    Tag="QualityControl_WinUI.Views.SurveyPage"                                    />
-                <NavigationViewItem Icon="Library" 
-                                    Content="Documentation"
-                                    Tag="QualityControl_WinUI.Views.SurveyPage"/>
+                <NavigationViewItem x:Name="HomeNVI"
+                    Icon="Home"
+                    Content="Home page" 
+                    Tag="QualityControl_WinUI.Views.HomePage" />
+                <NavigationViewItem x:Name="ReviewNVI"
+                    Icon="Map"
+                    Content="Review"
+                    Tag="QualityControl_WinUI.Views.ReviewPage" />
+                <NavigationViewItem x:Name="FeedbackNVI"
+                    Icon="Phone" 
+                    Content="Feedback" 
+                    Tag="QualityControl_WinUI.Views.FeedbackPage" />
+                <NavigationViewItem x:Name="DocNVI"
+                    Icon="Library" 
+                    Content="Documentation"
+                    Tag="QualityControl_WinUI.Views.OtherFuncPage"/>
                 
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame" Navigated="ContentFrame_Navigated"/>

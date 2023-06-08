@@ -48,7 +48,9 @@
                                 <RowDefinition Height="2*"/>
                             </Grid.RowDefinitions>
 
-                            <Button Grid.Row="0"
+                            <Button x:Name="YandexBtn" 
+                                    Click="YandexBtn_Click"
+                                Grid.Row="0"
                                 Grid.RowSpan="2"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
@@ -61,7 +63,9 @@
                                 Margin="0,0,1,1"
                                 CornerRadius="8,0,0,0"/>
                             
-                            <Button Grid.Row="0" 
+                            <Button x:Name="dGISBtn"
+                                    Click="dGISBtn_Click"
+                                Grid.Row="0" 
                                 Grid.Column="2" 
                                 VerticalAlignment="Stretch" 
                                 HorizontalAlignment="Stretch"
@@ -72,7 +76,9 @@
                                 Margin="1,0,2,1"
                                 CornerRadius="0"/>
                             
-                            <Button Grid.Row="2" 
+                            <Button x:Name="OtzovikBtn"
+                                    Click="OtzovikBtn_Click"
+                                Grid.Row="2" 
                                 Grid.Column="0"  
                                 VerticalAlignment="Stretch" 
                                 HorizontalAlignment="Stretch"
@@ -83,7 +89,9 @@
                                 Margin="0,1,1,0"
                                 CornerRadius="0"/>
                             
-                            <Button Grid.Row="2" 
+                            <Button x:Name="ZoonBtn"
+                                    Click="ZoonBtn_Click"
+                                Grid.Row="2" 
                                 Grid.Column="1" 
                                 VerticalAlignment="Stretch"
                                 HorizontalAlignment="Stretch"
@@ -94,7 +102,9 @@
                                 Margin="1,1,1,0"
                                 CornerRadius="0"/>
                             
-                            <Button Grid.Row="1" 
+                            <Button x:Name="FlampBtn"
+                                    Click="FlampBtn_Click"
+                                Grid.Row="1" 
                                 Grid.RowSpan="2" 
                                 Grid.Column="2" 
                                 VerticalAlignment="Stretch" 

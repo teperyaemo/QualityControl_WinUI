@@ -29,6 +29,20 @@ namespace QualityControl_WinUI.Views
         public HomePage()
         {
             this.InitializeComponent();
+            switch (MainWindow.UserID)
+            {
+                case 1:
+                    PolinaPR.IsActive = true;
+                break;
+
+                case 2:
+                    MinislamPR.IsActive = true;
+                break;
+
+                case 3:
+                    DianaPR.IsActive = true;
+                break;
+            }
         }
 
         private void MinislamBtn_Click(object sender, RoutedEventArgs e)
@@ -36,6 +50,7 @@ namespace QualityControl_WinUI.Views
             MinislamPR.IsActive = true;
             PolinaPR.IsActive = false;
             DianaPR.IsActive = false;
+            MainWindow.UserID = 2;
         }
 
         private void PolinaBtn_Click(object sender, RoutedEventArgs e)
@@ -43,6 +58,7 @@ namespace QualityControl_WinUI.Views
             MinislamPR.IsActive = false;
             PolinaPR.IsActive = true;
             DianaPR.IsActive = false;
+            MainWindow.UserID = 1;
         }
 
         private void DianaBtn_Click(object sender, RoutedEventArgs e)
@@ -50,6 +66,7 @@ namespace QualityControl_WinUI.Views
             MinislamPR.IsActive = false;
             PolinaPR.IsActive = false;
             DianaPR.IsActive = true;
+            MainWindow.UserID = 3;
         }
     }
 }
